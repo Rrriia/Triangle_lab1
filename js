@@ -83,6 +83,14 @@ switch (type1) {
     console.log("Помилка: Невірна комбінація типів аргументів. Перечитайте інструкцію.");
     return "failed";
   }
-return "success";
+
+  console.log(`Результати:`);
+    console.log(`a = ${a.toFixed(2)}`);
+    console.log(`b = ${b.toFixed(2)}`);
+    console.log(`c = ${c.toFixed(2)}`);
+    console.log(`alpha = ${alpha.toFixed(2)}°`);
+    console.log(`beta = ${beta.toFixed(2)}°`);
+
+  return "success";
 }
 

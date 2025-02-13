@@ -57,30 +57,32 @@ switch (type1) {
         break;
     }
     break;
-    case "hypotenuse":
-      switch (type2) {
-        case "leg":
-          c = value1;
-          a = value2;
-          b = Math.sqrt(c * c - a * a);
-          alpha = toDegrees(Math.asin(a / c));
-          beta = 90 - alpha;
-          break;
+  case "hypotenuse":
+    switch (type2) {
+      case "leg":
+        c = value1;
+        a = value2;
+        b = Math.sqrt(c * c - a * a);
+        alpha = toDegrees(Math.asin(a / c));
+        beta = 90 - alpha;
+        break;
     }
     break;
-    case "angle":
-      switch (type2) {
-        case "leg":
-          alpha = value1;
-          a = value2;
-          beta = 90 - alpha;
-          c = a / Math.sin(toRadians(alpha));
-          b = Math.sqrt(c * c - a * a);
-          break;
-      }
+  case "angle":
+    switch (type2) {
+      case "leg":
+        alpha = value1;
+        a = value2;
+        beta = 90 - alpha;
+        c = a / Math.sin(toRadians(alpha));
+        b = Math.sqrt(c * c - a * a);
+        break;
+    }
     break;
-    default:
-      console.log("Помилка: Невірна комбінація типів аргументів. Перечитайте інструкцію.");
-      return "failed";
+  default:
+    console.log("Помилка: Невірна комбінація типів аргументів. Перечитайте інструкцію.");
+    return "failed";
+  }
+return "success";
 }
 

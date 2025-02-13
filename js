@@ -30,3 +30,57 @@ if ((type1==="leg"&&type2==="hypotenuse"&&element1>=element2)||(type2==="leg"&&t
   console.log("Помилка: катет не може бути більшим або рівним гіпотенузі.");
   return "failed";
 }
+
+switch (type1) {
+  case "leg":
+    switch (type2) {
+      case "leg":
+        a = value1;
+        b = value2;
+        c = Math.sqrt(a * a + b * b);
+        alpha = toDegrees(Math.atan(a / b));
+        beta = toDegrees(Math.atan(b / a));
+        break;
+      case "hypotenuse":
+        a = value1;
+        c = value2;
+        b = Math.sqrt(c * c - a * a);
+        alpha = toDegrees(Math.asin(a / c));
+        beta = 90 - alpha;
+                            break;
+                        case "angle":
+                            a = value1;
+                            alpha = value2;
+                            beta = 90 - alpha;
+                            c = a / Math.sin(toRadians(alpha));
+                            b = Math.sqrt(c * c - a * a);
+                            break;
+                    }
+                    break;
+                case "hypotenuse":
+                    switch (type2) {
+                        case "leg":
+                            c = value1;
+                            a = value2;
+                            b = Math.sqrt(c * c - a * a);
+                            alpha = toDegrees(Math.asin(a / c));
+                            beta = 90 - alpha;
+                            break;
+                    }
+                    break;
+                case "angle":
+                    switch (type2) {
+                        case "leg":
+                            alpha = value1;
+                            a = value2;
+                            beta = 90 - alpha;
+                            c = a / Math.sin(toRadians(alpha));
+                            b = Math.sqrt(c * c - a * a);
+                            break;
+                    }
+                    break;
+                default:
+                    console.log("Помилка: Невірна комбінація типів аргументів. Перечитайте інструкцію.");
+                    return "failed";
+            }
+

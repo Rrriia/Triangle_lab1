@@ -14,5 +14,19 @@ function toDegrees(radians){
 }
 
 let a,b,c,alpha,beta;
+const types=["leg", "angle","hypotenuse"];
 
-if isValidInput ()
+if (!types.includes(type1)||!types.includes(type)){
+  console.log("Помилка: невірний тип аргументу. Перечитайте інструкцію ще раз.");
+  return "failed";
+}
+
+if (element1<=0||element2<=0){
+  console.log("Помилка: значення аргументів повинні бути додатнім.");
+  return "failed";
+}
+
+if ((type1==="leg"&&type2==="hypotenuse"&&element1>=element2)||(type2==="leg"&&type1==="hypotenuse"&&element2>=element1){
+  console.log("Помилка: катет не може бути більшим або рівним гіпотенузі.");
+  return "failed";
+}

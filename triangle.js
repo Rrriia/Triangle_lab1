@@ -1,17 +1,18 @@
+function showInstructions() {
+    console.log("Використання функції triangle (value1, type1, value2, type2)");
+    console.log("Параметри:");
+    console.log("value1, type1 - перший елемент і його тип");
+    console.log("value2, type2 - другий елемент і його тип");
+    console.log("Можливі типи (записувати у лапках ""): leg, hypotenuse, adjacent angle, opposite angle, angle");
+    console.log("Тип 'angle' можна використовувати тільки з типом 'hypotenuse'");
+}
+
 function toRadians(degrees) {
     return degrees * (Math.PI / 180);
 }
  
 function toDegrees(radians) {
     return radians * (180 / Math.PI);
-}
-
-function showInstructions() {
-    console.log("Використання функції triangle (value1, type1, value2, type2)");
-    console.log("Параметри:");
-    console.log("value1, type1 - перший елемент і його тип");
-    console.log("value2, type2 - другий елемент і його тип");
-    console.log("Можливі типи (записувати у лапках): leg, hypotenuse, adjacent angle, opposite angle, angle");
 }
  
 function triangle(value1, type1, value2, type2) {

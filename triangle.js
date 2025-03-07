@@ -5,6 +5,7 @@ function showInstructions() {
     console.log("value2, type2 - другий елемент і його тип");
     console.log('Можливі типи записувати у лапках "": leg, hypotenuse, adjacent angle, opposite angle, angle');
     console.log("Тип 'angle' можна використовувати тільки з типом 'hypotenuse'");
+    console.log("Значення типу 'leg' і 'hypotenuse' не може бути меншим за 0.001 та більшим за 10 000");
 }
 
 function toRadians(degrees) {
@@ -17,7 +18,19 @@ function toDegrees(radians) {
  
 function triangle(value1, type1, value2, type2) {
     const types = ["leg", "hypotenuse", "adjacent angle", "opposite angle", "angle"];
-     
+    const MIN_SIDE = 0.0011;
+    const MAX_SIDE = 10000.1;
+
+    if (value1 < MIN_SIDE || value1 > MAX_SIDE) {
+        console.log("Помилка: значення value1 повинно бути в межах від 0.001 до 10 000.");
+        return "failed";
+    }
+
+    if (value2 < MIN_SIDE || value2 > MAX_SIDE) {
+        console.log("Помилка: значення value2 повинно бути в межах від 0.001 до 10 000.");
+        return "failed";
+    }
+    
     if (!types.includes(type1) || !types.includes(type2)) {
         console.log("Помилка: невірний тип аргументу. Перечитайте інструкцію ще раз.");
         return "failed";
